@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Py2Blocks — Python → Blocs SPIKE Prime</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f6c50f'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%23000' font-family='sans-serif' font-weight='bold'%3E%E2%96%B6%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <span class="logo-brick"></span>
+    <h1>Py2Blocks <small>SPIKE™ Prime</small></h1>
+  </div>
+  <div class="toolbar">
+    <select id="examples" title="Programmes d'exemple">
+      <option value="">📚 Exemples…</option>
+    </select>
+    <button id="btn-convert" class="primary">⚙️ Convertir en blocs</button>
+    <button id="btn-download" class="accent" disabled>⬇️ Télécharger .llsp3</button>
+    <button id="btn-copyjson" disabled>📋 Copier project.json</button>
+  </div>
+</header>
+
+<main>
+  <section class="pane left">
+    <div class="pane-header">
+      <h2>🐍 Code Python (SPIKE App 3)</h2>
+      <span class="hint">API : <code>from hub import port…</code>, <code>import motor_pair, runloop</code></span>
+    </div>
+    <div class="editor-wrap">
+      <pre id="line-numbers" aria-hidden="true"></pre>
+      <textarea id="editor" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+    </div>
+    <div id="warnings" class="warnings"></div>
+  </section>
+
+  <section class="pane right">
+    <div class="pane-header">
+      <h2>🧩 Aperçu des blocs (Word Blocks)</h2>
+      <span class="hint" id="block-count"></span>
+    </div>
+    <div id="blocks-area">
+      <div class="placeholder">
+        <p>Collez ou écrivez votre code Python à gauche,<br>puis cliquez sur <b>⚙️ Convertir en blocs</b>.</p>
+        <p class="sub">Le fichier <b>.llsp3</b> généré s'ouvre dans l'application<br>
+        <a href="https://spike.legoeducation.com/prime/project" target="_blank" rel="noopener">spike.legoeducation.com/prime/project</a><br>
+        (créer un projet <b>Blocs</b> → Fichier → Importer).</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Convertisseur Python → Word Blocks pour LEGO® SPIKE™ Prime — projet non officiel, sans affiliation avec LEGO® Education.</span>
+</footer>
+
+<div id="toast"></div>
+
+<script src="js/zip.js"></script>
+<script src="js/converter.js"></script>
+<script src="js/blocksview.js"></script>
+<script src="js/examples.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
